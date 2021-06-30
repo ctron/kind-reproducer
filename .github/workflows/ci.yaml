@@ -1,0 +1,13 @@
+name: test
+on:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Create k8s kind Cluster
+        uses: helm/kind-action@v1.1.0
+        with:
+          wait: 300s
+          cluster_name: kind
